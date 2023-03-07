@@ -1,0 +1,22 @@
+<p class="text-center text-muted" *ngIf="!animais.length">
+  Desculpe! Não há animais.
+</p>
+
+<div class="row">
+  <div class="col-4 text-center" *ngFor="let animal of animais">
+    <app-cartao>
+      <a [routerLink]="['/animais', animal.id]">
+        <app-animal [url]="animal.url" [descricao]="animal.description">
+        </app-animal
+      ></a>
+      <div class="p-1">
+        <i class="fa fa-heart-o fa-1x mr-2" aria-hidden="true">{{
+          animal.likes
+        }}</i>
+        <i class="fa fa-comment-o fa-1x mr-2 ml-2" aria-hidden="true">{{
+          animal.comments
+        }}</i>
+      </div>
+    </app-cartao>
+  </div>
+</div>
